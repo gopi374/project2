@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 97%;
+    --foreground: 20 40% 15%;
+
+    --card: 36 30% 97%;
+    --card-foreground: 20 40% 15%;
+
+    --popover: 36 30% 97%;
+    --popover-foreground: 20 40% 15%;
+
+    --primary: 20 70% 35%;
+    --primary-foreground: 36 30% 97%;
+
+    --secondary: 120 15% 40%;
+    --secondary-foreground: 36 30% 97%;
+
+    --accent: 43 80% 50%;
+    --accent-foreground: 20 40% 15%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 30% 30%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 36 30% 97%;
+
+    --border: 20 30% 85%;
+    --input: 20 30% 85%;
+    --ring: 20 70% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 40% 10%;
+    --foreground: 36 30% 90%;
+
+    --card: 20 40% 12%;
+    --card-foreground: 36 30% 90%;
+
+    --popover: 20 40% 12%;
+    --popover-foreground: 36 30% 90%;
+
+    --primary: 20 70% 45%;
+    --primary-foreground: 36 30% 97%;
+
+    --secondary: 120 15% 30%;
+    --secondary-foreground: 36 30% 97%;
+
+    --accent: 43 80% 40%;
+    --accent-foreground: 20 40% 10%;
+
+    --muted: 20 30% 20%;
+    --muted-foreground: 36 20% 70%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 36 30% 90%;
+
+    --border: 20 30% 25%;
+    --input: 20 30% 25%;
+    --ring: 20 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50C55 45 60 40 65 45C70 50 75 55 70 60C65 65 60 70 55 65C50 60 45 55 50 50Z' fill='%23a87c5d' fill-opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair;
+  }
+  .font-cursive {
+    @apply font-dancing;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2;
+  }
+
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-primary relative inline-block;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-accent rounded-full;
+  }
+
+  .henna-pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50C55 45 60 40 65 45C70 50 75 55 70 60C65 65 60 70 55 65C50 60 45 55 50 50Z' fill='%23a87c5d' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+
+  .image-hover-zoom {
+    @apply overflow-hidden rounded-lg;
+  }
+
+  .image-hover-zoom img {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+
+  .image-hover-zoom:hover img {
+    @apply scale-110;
+  }
+}
+
